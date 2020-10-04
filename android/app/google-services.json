@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "496886502013",
+    "firebase_url": "https://wise-chalice-247213.firebaseio.com",
+    "project_id": "wise-chalice-247213",
+    "storage_bucket": "wise-chalice-247213.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496886502013:android:fa533748f802011bf19714",
+        "android_client_info": {
+          "package_name": "com.siddhartha.vaccineApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496886502013-71dd4vi2dc7sk17qavn435236g0vsur0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcWFCSETBGwy7JZCeh4FNyL43zika1svo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496886502013-71dd4vi2dc7sk17qavn435236g0vsur0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

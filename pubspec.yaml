@@ -1,0 +1,50 @@
+name: vaccineApp
+description: A new Flutter application.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core:
+  cloud_firestore:
+  flutter_form_builder:
+  firebase_auth:
+  firebase_analytics:
+  firebase_crashlytics:
+  animations:
+  settings_ui: ^0.3.0
+  intl:
+  hive:
+  hive_flutter:
+  path_provider:
+  get_it: ^4.0.2
+  stacked: ^1.6.0
+  flutter_local_notifications:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^0.7.1
+  build_runner:
+  flutter_native_splash:
+  flutter_launcher_icons:
+
+flutter_icons:
+  image_path: "assets/images/app_icon_circle.png"
+  android: true
+  ios: false
+
+flutter_native_splash:
+  image: assets/images/app_icon_320.png
+  color: "e5f9f8"
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

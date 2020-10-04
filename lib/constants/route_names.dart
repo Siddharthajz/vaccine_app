@@ -1,0 +1,12 @@
+const String LoginViewRoute = "LoginView";
+const String SignUpViewRoute = "SignUp";
+const String VaccineListRoute = "VaccineList";
+const String VaccineInfoRoute = "VaccineInfo";
+const String ChildrenListRoute = "ChildrenList";
+const String AddChildRoute = "AddChild";
+const String RestartAppRoute = "RestartApp";
+const String DoseInfoRoute = "DoseInfo";
+const String ScheduleRoute = "Schedule";
+const String HomeRoute = "Home";
+const String SettingsRoute = "Settings";
+// Generate the views here
