@@ -48,15 +48,9 @@ class DoseInfo extends StatelessWidget {
                     title: Row(
                         children: <Widget>[
                             Text(dose.vaccineID),
-                            Text(" (" + dose.label + ")", style: TextStyle(fontSize: 16))
+                            Text(" (" + model.finalLabel(dose.label) + ")", style: TextStyle(fontSize: 16))
                         ],
                     ),
-                    actions: <Widget>[
-                        IconButton(
-                            icon: const Icon(Icons.power_settings_new),
-                            onPressed: () => model.signOut(),
-                        )
-                    ],
                 ),
                 body: SingleChildScrollView(
                     child: Padding(
@@ -90,14 +84,13 @@ class DoseInfo extends StatelessWidget {
                                     textInputAction: TextInputAction.done,
                                     onTap: () async {
                                         DateTime reminderDate = schDose.dueDate;
-                                        DateTime firstDate = model.stringToDate(model.getDoseDate(dose.startDate));
-                                        DateTime lastDate = model.stringToDate(model.getDoseDate(dose.endDate));
+                                        DateTime doseDate = model.stringToDate(model.getDoseDate(dose.startDate));
                                         FocusScope.of(context).requestFocus(new FocusNode());
                                         reminderDate = await showDatePicker(
                                             context: context,
                                             initialDate: DateTime(reminderDate.year, reminderDate.month, reminderDate.day),
-                                            firstDate: DateTime(firstDate.year, firstDate.month, firstDate.day),
-                                            lastDate: DateTime(lastDate.year, lastDate.month, lastDate.day)
+                                            firstDate: DateTime(doseDate.year, doseDate.month, doseDate.day),
+                                            lastDate: DateTime(doseDate.year + 100, doseDate.month, doseDate.day)
                                         );
                                         reminderController.text = "${reminderDate.day.toString().padLeft(2,'0')}-${reminderDate.month.toString().padLeft(2,'0')}-${reminderDate.year.toString()}";
                                     }
@@ -109,14 +102,15 @@ class DoseInfo extends StatelessWidget {
                                     controller: givenDateController,
                                     textInputAction: TextInputAction.done,
                                     onTap: () async {
-                                        DateTime dob = DateTime.now();//model.stringToDate(model.getChildDOB());
+                                        // DateTime dob = model.stringToDate(model.getChildDOB());
                                         DateTime date = DateTime.now();
+                                        DateTime doseDate = model.stringToDate(model.getDoseDate(dose.startDate));
                                         DateTime now = DateTime.now();
                                         FocusScope.of(context).requestFocus(new FocusNode());
                                         date = await showDatePicker(
                                             context: context,
-                                            initialDate: DateTime(date.year, date.month, date.day),
-                                            firstDate: DateTime(dob.year, dob.month, dob.day),
+                                            initialDate: DateTime(now.year, now.month, now.day),
+                                            firstDate: DateTime(doseDate.year, doseDate.month, doseDate.day),
                                             lastDate: DateTime(now.year, now.month, now.day)
                                         );
                                         givenDateController.text = "${date.day.toString().padLeft(2,'0')}-${date.month.toString().padLeft(2,'0')}-${date.year.toString()}";

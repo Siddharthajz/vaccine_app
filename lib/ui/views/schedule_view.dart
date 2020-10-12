@@ -31,13 +31,13 @@ class _ScheduleViewState extends State<ScheduleView> {
                 appBar: AppBar(
                   title: Text('Schedule'),
                   actions: [
-                    IconButton(
-                        //for crashing app
-                      icon: Icon(Icons.notifications),
-                      onPressed: (){
-                        model.tempFunction();
-                      },
-                    ),
+                    // IconButton(
+                    //     //for crashing app
+                    //   icon: Icon(Icons.notifications),
+                    //     onPressed: (){
+                    //         model.tempFunction();
+                    //     },
+                    // ),
                     GestureDetector(
                       onTap: () {
                         model.viewManageChildren(model.isActiveChild());

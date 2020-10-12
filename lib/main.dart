@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
                             fontFamily: 'Open Sans',
                         ),
                     ),
-                    // TOTDO: darkTheme: ThemeData.dark(),
+                    // TODO: darkTheme: ThemeData.dark(),
                     initialRoute: '/',
                     onGenerateRoute: generateRoute,
                 );

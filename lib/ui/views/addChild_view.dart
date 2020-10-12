@@ -24,11 +24,12 @@ class AddChild extends StatelessWidget {
             builder: (context, model, child) => Scaffold(
                 backgroundColor: Colors.white,
                 appBar: AppBar(
-                    title: const Text('Add Child'),
+                    title: const Text('Add Child Profile'),
                 ),
                 body: BusyOverlay(
                     show: model.busy,
-                    title: "Please wait, as this may take a minute!",
+                    // TODO: come up with a suitable title
+                    title: "Please wait, as this may take a minute!\nDo not navigate out of this page",
                     child: SingleChildScrollView(
                         child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 50),

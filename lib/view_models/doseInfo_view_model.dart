@@ -84,4 +84,23 @@ class DoseInfoViewModel extends BaseModel {
 
 
     }
+
+    String finalLabel(String dose) {
+        Map<String, String> doses = {
+            "D1": "Dose 1",
+            "D2": "Dose 2",
+            "D3": "Dose 3",
+            "D4": "Dose 4",
+            "D5": "Dose 5",
+            "D6": "Dose 6",
+            "D7": "Dose 7",
+            "D8": "Dose 8",
+            "Booster": "Booster",
+            "Booster 1": "Booster 1",
+            "Booster 2": "Booster 2",
+            "Booster 3": "Booster 3",
+            "Booster 4": "Booster 4",
+        };
+        return doses[dose];
+    }
 }

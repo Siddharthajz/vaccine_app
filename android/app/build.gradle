@@ -50,8 +50,8 @@ android {
         minSdkVersion 23
         targetSdkVersion 30
         multiDexEnabled true
-        versionCode 8
-        versionName "1.2.4"
+        versionCode 9
+        versionName "1.2.5"
     }
 
     // another key thing

@@ -20,7 +20,7 @@ class ChildListItem extends StatelessWidget {
                         ListTile(
                             leading: leadingWidget,
                             title: Text(child.fname + " " + child.surname),
-                            trailing: Icon(Icons.arrow_forward),
+                            subtitle: Text("Date of birth: " + child.dob),
                             onTap: () {
                                 if (onTapChild != null) {
                                     onTapChild();
