@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 // Box Decorations
 
-BoxDecoration fieldDecortaion = BoxDecoration(
+BoxDecoration fieldDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(5), color: Colors.grey[200]);
 
-BoxDecoration disabledFieldDecortaion = BoxDecoration(
+BoxDecoration disabledFieldDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(5), color: Colors.grey[100]);
 
 // Field Variables
@@ -22,4 +22,8 @@ const EdgeInsets largeFieldPadding =
 const TextStyle buttonTitleTextStyle =
     const TextStyle(fontWeight: FontWeight.w700, color: Colors.white);
 
-const TextStyle labelTextSyle = const TextStyle(fontSize: 17);
+const TextStyle labelTextStyle = const TextStyle(fontSize: 17);
+
+const TextStyle vaccineDescTextStyle = const TextStyle(fontSize: 17, fontWeight: FontWeight.w300, color: Colors.black);
+
+const TextStyle vaccineTopicTextStyle = const TextStyle(fontSize: 17, fontWeight: FontWeight.w400, color: Colors.black);

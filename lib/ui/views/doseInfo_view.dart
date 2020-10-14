@@ -64,8 +64,8 @@ class DoseInfo extends StatelessWidget {
                                 Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
-                                        Text("Due on", style: labelTextSyle),
-                                        Text(model.getDoseDate(dose.startDate), style: labelTextSyle),
+                                        Text("Due on", style: labelTextStyle),
+                                        Text(model.getDoseDate(dose.startDate), style: labelTextStyle),
                                     ],
                                 ),
                                 verticalSpaceMedium,
@@ -77,7 +77,7 @@ class DoseInfo extends StatelessWidget {
                                         isGiven = value;
                                     },
                                 ),
-                                Text("Reminder:", style: labelTextSyle),
+                                Text("Reminder:", style: labelTextStyle),
                                 InputField(
                                     placeholder: (schDose.dueDate != null ? "${schDose.dueDate.day.toString().padLeft(2,'0')}-${schDose.dueDate.month.toString().padLeft(2,'0')}-${schDose.dueDate.year.toString()}" : "Set Date"),
                                     controller: reminderController,
@@ -96,7 +96,7 @@ class DoseInfo extends StatelessWidget {
                                     }
                                 ),
                                 verticalSpaceMedium,
-                                Text("Date given:", style: labelTextSyle),
+                                Text("Date given:", style: labelTextStyle),
                                 InputField(
                                     placeholder: dose.givenDate,
                                     controller: givenDateController,
@@ -117,13 +117,13 @@ class DoseInfo extends StatelessWidget {
                                     }
                                 ),
                                 verticalSpaceSmall,
-                                Text("Doctor\'s Name:", style: labelTextSyle),
+                                Text("Doctor\'s Name:", style: labelTextStyle),
                                 InputField(
                                     placeholder: dose.doctorName,
                                     controller: doctorNameController,
                                 ),
                                 verticalSpaceSmall,
-                                Text("Notes:", style: labelTextSyle),
+                                Text("Notes:", style: labelTextStyle),
                                 InputField(
                                     // fieldHeight: 150,
                                   placeholder: dose.notes,

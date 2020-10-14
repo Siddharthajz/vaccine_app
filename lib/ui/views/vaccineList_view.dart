@@ -92,7 +92,7 @@ class VaccineList extends StatelessWidget {
                                 size: 120,
                             ),
                             verticalSpaceMedium,
-                            Text("No Active Child Profile!", style: labelTextSyle),
+                            Text("No Active Child Profile!", style: labelTextStyle),
                             verticalSpaceSmall,
                             RaisedButton(
                                 child: Text("Add Child"),
