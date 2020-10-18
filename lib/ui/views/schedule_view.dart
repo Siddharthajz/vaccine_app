@@ -18,9 +18,11 @@ class ScheduleView extends StatefulWidget{
 class _ScheduleViewState extends State<ScheduleView> {
   int selectedIndex = 9999;
   String filterName = "";
+  ScrollController _scrollController;
 
   @override
   Widget build(BuildContext context) {
+      _scrollController = ScrollController();
       bool isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
       return ViewModelBuilder<ScheduleViewModel>.reactive(
             disposeViewModel: false,
@@ -31,13 +33,6 @@ class _ScheduleViewState extends State<ScheduleView> {
                 appBar: AppBar(
                   title: Text('Schedule'),
                   actions: [
-                    // IconButton(
-                    //     //for crashing app
-                    //   icon: Icon(Icons.notifications),
-                    //     onPressed: (){
-                    //         model.tempFunction();
-                    //     },
-                    // ),
                     GestureDetector(
                       onTap: () {
                         model.viewManageChildren(model.isActiveChild());
@@ -62,6 +57,7 @@ class _ScheduleViewState extends State<ScheduleView> {
                   ],
                 ),
                 body: model.isActiveChild() ? CustomScrollView(
+                    controller: _scrollController,
                     slivers: <Widget>[
                         model.dueDoses.isNotEmpty ? StickyHeader(headerText: "Vaccine Due: "+model.dueDoses.length.toString()) : SliverToBoxAdapter(child: Container()),
                         model.isLoadingDbProcess ? SliverToBoxAdapter(
@@ -98,11 +94,12 @@ class _ScheduleViewState extends State<ScheduleView> {
                                     itemBuilder: (context, index) {
                                         return GestureDetector(
                                             onTap: () {
-                                              setState(() {
-                                                selectedIndex = index;
-                                                filterName = model.doseFilter[index];
-                                              });
-                                              model.filterDoseBy(index);
+                                                setState(() {
+                                                    selectedIndex = index;
+                                                    filterName = model.doseFilter[index];
+                                                });
+                                                model.filterDoseBy(index);
+                                                model.scrollDown(_scrollController, 50, 500);
                                             },
                                             child: Container(
                                                 width: 80.0,

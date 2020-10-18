@@ -39,7 +39,7 @@ class _SettingsState extends State<Settings> {
                                       ),
                                       SettingsTile(
                                           title: 'Reset Schedule',
-                                          subtitle: "Reset Vaccines schedule to factory settings.",
+                                          subtitle: "Reset Vaccines schedule to default settings.",
                                           leading: Icon(Icons.refresh),
                                           onTap: () {
                                               model.resetSchedule();

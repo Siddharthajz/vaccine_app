@@ -1,4 +1,5 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hive/hive.dart';
 import 'package:stacked/stacked.dart';
@@ -200,7 +201,7 @@ class ScheduleViewModel extends IndexTrackingViewModel{
         }
     }
 
-    void filterDoseBy(int index){
+    void filterDoseBy(int index) {
         print("Filter Dose List by: "+doseFilter[index]);
         switch(index){
             case 0: getFilteredDoses(0, 0);
@@ -231,6 +232,22 @@ class ScheduleViewModel extends IndexTrackingViewModel{
                 break;
             default: getFilteredDoses(null, null);
         }
+    }
+
+    void scrollDown(ScrollController controller, int pixelsToMove, int duration) {
+        controller.animateTo(
+            controller.offset + pixelsToMove,
+            curve: Curves.linear,
+            duration: Duration(milliseconds: duration)
+        );
+    }
+
+    void scrollToBottom(ScrollController controller, int duration) {
+        controller.animateTo(
+            controller.position.maxScrollExtent,
+            duration: new Duration(milliseconds: 200),
+            curve: Curves.easeOut,
+        );
     }
 
     void tempFunction()async{

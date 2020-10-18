@@ -25,6 +25,7 @@ class VaccineInfo extends StatelessWidget {
             disposeViewModel: false,
             viewModelBuilder: () => VaccineInfoViewModel(),
             builder: (context, model, child) => Scaffold(
+                resizeToAvoidBottomInset: false,
                 appBar: AppBar(
                     title: Text(vaccine.name),
                     // actions: <Widget>[
@@ -40,12 +41,15 @@ class VaccineInfo extends StatelessWidget {
                             child: Column(
                                 children: [
                                     verticalSpaceSmall,
-                                    Container(
-                                        padding: EdgeInsets.only(left: 50, right: 50),
-                                        child: BusyButton(
-                                            title: vaccine.userSelected ? "Deselect Vaccine" : "Select Vaccine",
-                                            onPressed: () => model.setVaccine(vaccine.vaccineID, vaccine.userSelected),
-                                        )
+                                    Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                            BusyButton(
+                                                title: vaccine.userSelected ? "Unselect Vaccine" : "Select Vaccine",
+                                                onPressed: () => model.setVaccine(vaccine.vaccineID, vaccine.userSelected),
+                                            ),
+                                        ]
                                     ),
                                 ],
                             ),
@@ -83,8 +87,8 @@ class VaccineInfo extends StatelessWidget {
                                         child: RichText(
                                             text: TextSpan(
                                                 children: <TextSpan>[
-                                                    TextSpan(text: "Description: ", style: vaccineTopicTextStyle),
-                                                    TextSpan(text: vaccine.description, style: vaccineDescTextStyle),
+                                                    TextSpan(text: "Description: \n", style: vaccineTopicTextStyle),
+                                                    TextSpan(text: vaccine.description.replaceAll("\\n", "\n\n"), style: vaccineDescTextStyle),
                                                 ]
                                             )
                                         )
