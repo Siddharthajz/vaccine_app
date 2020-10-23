@@ -25,6 +25,7 @@ class _CheckBoxFieldState extends State<CheckBoxField> {
     @override
     Widget build(BuildContext context) {
         return CheckboxListTile(
+            activeColor: Theme.of(context).primaryColor,
             title: Text(widget.title),
             value: widget.value,
             onChanged: (value) {

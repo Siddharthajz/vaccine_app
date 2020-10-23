@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // Box Decorations
 
 BoxDecoration fieldDecoration = BoxDecoration(
-    borderRadius: BorderRadius.circular(5), color: Colors.grey[200]);
+    borderRadius: BorderRadius.circular(5), color: Colors.white/**Color.fromARGB(255, 242, 255, 252)**/);
 
 BoxDecoration disabledFieldDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(5), color: Colors.grey[100]);

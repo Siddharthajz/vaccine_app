@@ -16,6 +16,7 @@ class ChildrenList extends StatelessWidget {
             disposeViewModel: false,
             viewModelBuilder: () => ChildrenListViewModel(),
             builder: (context, model, child) => Scaffold(
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 appBar: AppBar(
                     title: const Text('Child List'),
                 ),
@@ -25,7 +26,7 @@ class ChildrenList extends StatelessWidget {
                     child: (model.children.length > 0) ? ListView.builder(
                       itemCount: model.children.length,
                       itemBuilder: (context, index) => ChildListItem(
-                          leadingWidget: model.isActiveChild(index) ? Icon(Icons.check_box, color: Colors.lightBlue) : Icon(Icons.check_box_outline_blank),
+                          leadingWidget: model.isActiveChild(index) ? Icon(Icons.check_box, color: Theme.of(context).primaryColor) : Icon(Icons.check_box_outline_blank),
                           child: model.children[index],
                           onTapChild: () => model.setActiveChild(index),
                       ),
@@ -34,7 +35,7 @@ class ChildrenList extends StatelessWidget {
                 floatingActionButton: FloatingActionButton(
                     onPressed: () => model.goToAddChild(),
                     child: Icon(Icons.add),
-                    backgroundColor: Colors.lightBlueAccent,
+                    backgroundColor: Theme.of(context).primaryColor,
                 ),
             ),
         );

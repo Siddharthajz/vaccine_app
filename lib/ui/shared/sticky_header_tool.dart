@@ -22,7 +22,7 @@ class StickyHeader extends StatelessWidget{
                     child: Text(
                         headerText,
                         style: TextStyle(
-                            color: Colors.black54,
+                            color: Theme.of(context).primaryColor,
                             fontSize: 18,
                             fontWeight: FontWeight.bold
                         ),

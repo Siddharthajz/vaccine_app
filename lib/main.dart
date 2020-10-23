@@ -73,6 +73,7 @@ class _MyAppState extends State<MyApp> {
                     debugShowCheckedModeBanner: false,
                     navigatorKey: locator<NavigationService>().navigationKey,
                     theme: ThemeData(
+                        scaffoldBackgroundColor: Color.fromARGB(255, 230, 255, 243),
                         primaryColor: Color.fromARGB(255, 9, 202, 172),
                         backgroundColor: Color.fromARGB(255, 26, 27, 30),
                         textTheme: Theme.of(context).textTheme.apply(

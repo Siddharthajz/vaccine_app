@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:vaccineApp/main.dart';
 import 'package:vaccineApp/ui/shared/ui_helpers.dart';
 import 'package:vaccineApp/ui/widgets/busy_button.dart';
 import 'package:vaccineApp/ui/widgets/busy_overlay.dart';
@@ -22,7 +23,7 @@ class AddChild extends StatelessWidget {
         return ViewModelBuilder<AddChildViewModel>.reactive(
             viewModelBuilder: () => AddChildViewModel(),
             builder: (context, model, child) => Scaffold(
-                backgroundColor: Colors.white,
+                backgroundColor: Color.fromARGB(255, 9, 202, 172),//Colors.white,
                 appBar: AppBar(
                     title: const Text('Add Child Profile'),
                 ),

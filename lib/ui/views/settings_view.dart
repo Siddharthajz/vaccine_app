@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:vaccineApp/ui/shared/app_colors.dart';
 import 'package:vaccineApp/ui/shared/ui_helpers.dart';
 import 'package:vaccineApp/ui/widgets/busy_overlay.dart';
 import 'package:vaccineApp/view_models/settings_view_model.dart';
@@ -25,9 +26,15 @@ class _SettingsState extends State<Settings> {
                         title: "Please wait...",
                         show: model.busy,
                         child: SettingsList(
+                            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                           sections: [
                               SettingsSection(
                                   title: 'Profile',
+                                  titleTextStyle: TextStyle(
+                                      color: Theme.of(context).primaryColor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold
+                                  ),
                                   tiles: [
                                       SettingsTile(
                                           title: 'Child List',

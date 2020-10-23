@@ -16,6 +16,7 @@ class DoseListItem extends StatelessWidget {
     Widget build(BuildContext context) {
         return ListTile(
             title: Card(
+                color: Color.fromRGBO(255, 255, 255, 1),
                 child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[

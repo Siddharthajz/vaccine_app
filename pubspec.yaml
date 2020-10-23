@@ -17,7 +17,7 @@ dependencies:
   firebase_analytics:
   firebase_crashlytics:
   animations:
-  settings_ui: ^0.3.0
+  settings_ui:
   intl:
   hive:
   hive_flutter:

@@ -45,7 +45,7 @@ class Notifications {
       },
     );
     var initializationSettings = InitializationSettings(
-        initializationSettingsAndroid, initializationSettingsIOS);
+        android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
     await flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onSelectNotification: (String payload) async {
           onSelectNotification(payload);
@@ -83,14 +83,14 @@ class Notifications {
       'CHANNEL_ID',
       'CHANNEL_NAME',
       "CHANNEL_DESCRIPTION",
-      importance: Importance.Max,
-      priority: Priority.High,
+      importance: Importance.max,
+      priority: Priority.high,
       playSound: true,
       timeoutAfter: 5000,
       styleInformation: DefaultStyleInformation(true, true),
     );
     var iosChannelSpecifics = IOSNotificationDetails();
-    var platformChannelSpecifics = NotificationDetails(androidChannelSpecifics, iosChannelSpecifics);
+    var platformChannelSpecifics = NotificationDetails(android: androidChannelSpecifics, iOS: iosChannelSpecifics);
     await flutterLocalNotificationsPlugin.show(
       notificationID,
       notificationTitle,
@@ -107,8 +107,8 @@ class Notifications {
       'CHANNEL_ID 1',
       'CHANNEL_NAME 1',
       "CHANNEL_DESCRIPTION 1",
-      importance: Importance.Max,
-      priority: Priority.High,
+      importance: Importance.max,
+      priority: Priority.high,
       playSound: true,
       timeoutAfter: 5000,
       styleInformation: DefaultStyleInformation(true, true),
@@ -120,8 +120,8 @@ class Notifications {
     );
     var iosChannelSpecifics = IOSNotificationDetails();
     var platformChannelSpecifics = NotificationDetails(
-      androidChannelSpecifics,
-      iosChannelSpecifics,
+      android: androidChannelSpecifics,
+      iOS: iosChannelSpecifics,
     );
     try {
       await flutterLocalNotificationsPlugin.schedule(

@@ -15,7 +15,6 @@ class LoginView extends StatelessWidget {
     return ViewModelBuilder<LoginViewModel>.reactive(
       viewModelBuilder: () => LoginViewModel(),
       builder: (context, model, child) => Scaffold(
-          backgroundColor: Colors.white,
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Column(
